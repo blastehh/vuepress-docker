@@ -1,3 +1,3 @@
 #!/bin/ash
 sh generate.sh
-while sleep 1d; do sh generate.sh; done
+while sleep 23h; do sh generate.sh; done
