@@ -5,6 +5,5 @@ cd /root/src
 rm -rf .vuepress/dist
 vuepress build
 echo "Copying files..."
-rm -rf /root/html/*
-cp -a .vuepress/dist/* /root/html/
+rsync -q -r --delete .vuepress/dist/ /root/html/
 echo "Done!"
