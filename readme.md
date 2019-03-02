@@ -16,12 +16,17 @@ The image will automatically regenerate the source files every 23 hours.
 docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d blasteh/vuepress
 ```
 
-## Github Example:
+## Github example:
 ```
-docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -e USE_GITHUB=1 -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git blasteh/vuepress
+docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git blasteh/vuepress
 ```
 
-## Github Example with a Personal access token:
+## Github example with a Personal access token:
 ```
-docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -e USE_GITHUB=1 -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git -e GITHUB_TOKEN=TOKENHERE blasteh/vuepress
+docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git -e GITHUB_TOKEN=TOKENHERE blasteh/vuepress
+```
+
+## Github with hooks example:
+```
+docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -e USE_HOOK=1 -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git -e GITHUB_TOKEN=TOKENHERE blasteh/vuepress
 ```

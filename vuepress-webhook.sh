@@ -1,19 +1,16 @@
 #!/bin/ash
 set -euo pipefail
 
-cd /root/src
-rm -rf .vuepress/dist
-if [ -n "$USE_GITHUB" ]; then
-    if [ -z "$GITHUB_REPO" ]; then
-        exit 1
-    fi
-    
+if [ -n "$GITHUB_REPO" ]; then
+    cd /root/src
     if [ -n "$GITHUB_TOKEN" ]; then
+        rm -rf ..?* .[!.]* *
         git clone https://$GITHUB_TOKEN@$GITHUB_REPO .; git pull
     else
         git clone https://$GITHUB_REPO .; git pull
     fi
-
+else
+    sh /generate.sh
 fi
 
 vuepress build
