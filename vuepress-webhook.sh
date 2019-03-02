@@ -9,7 +9,7 @@ if [ -n "$USE_GITHUB" ]; then
     fi
     
     if [ -n "$GITHUB_TOKEN" ]; then
-        git clone https://"$GITHUB_TOKEN"@$GITHUB_REPO .; git pull
+        git clone https://$GITHUB_TOKEN@$GITHUB_REPO .; git pull
     else
         git clone https://$GITHUB_REPO .; git pull
     fi
