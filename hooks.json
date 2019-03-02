@@ -1,0 +1,7 @@
+[
+    {
+      "id": "vuepress-webhook",
+      "execute-command": "vuepress-webhook.sh",
+      "command-working-directory": "/root"
+    }
+  ]
