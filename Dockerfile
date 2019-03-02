@@ -1,6 +1,6 @@
 FROM node:alpine as build
 
-RUN install_packages curl tar gzip go libc-dev git
+RUN apk add curl tar gzip go libc-dev git
 COPY build.sh build.sh
 RUN chmod +x ./build.sh \
     && ./build.sh
