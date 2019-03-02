@@ -9,7 +9,8 @@ Input folder: `/root/src`
 Output folder: `/root/html`
 
 When the build runs, it will take contents of the input folder, generate the site, and then place them in the output folder.
-This image regenerates the files every 23 hours unless you use the hook option
+This image regenerates the files every 23 hours unless you use the hook option.
+Webhook is supplied by [Hookdoo](https://github.com/adnanh/webhook)
 
 ## Environment variables
 `USE_HOOK` - The web hook is enabled as long as this is present.
