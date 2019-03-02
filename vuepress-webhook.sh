@@ -9,11 +9,11 @@ if [ -n "$GITHUB_REPO" ]; then
     else
         git clone https://$GITHUB_REPO .; git pull
     fi
+
+    vuepress build
+    echo "Copying files..."
+    rsync -q -r --delete .vuepress/dist/ /root/html/
+    echo "Done!"
 else
     sh /generate.sh
 fi
-
-vuepress build
-echo "Copying files..."
-rsync -q -r --delete .vuepress/dist/ /root/html/
-echo "Done!"
