@@ -31,8 +31,8 @@ if [ -n "$GITHUB_REPO" ]; then
         git config --global user.email "vuepress@autobuild.local"
         git config --global user.name "Vuepress Autobuild"
         git commit -m 'Auto Deploy'
-        git remote set-url origin https://$PUSH_TOKEN@$GITHUB_PUSH_REPO
-        git push -f origin
+        git remote add origin https://$PUSH_TOKEN@$GITHUB_PUSH_REPO
+        git push -f origin master
     fi
 else
     sh /generate.sh
