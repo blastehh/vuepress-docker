@@ -1,5 +1,5 @@
 #!/bin/ash
-set -euo pipefail
+set -eo pipefail
 
 if [ -n "$GITHUB_REPO" ]; then
     cd /root/src
@@ -18,6 +18,10 @@ if [ -n "$GITHUB_REPO" ]; then
         if [ -n "$GITHUB_PUSH_TOKEN" ]; then
             PUSH_TOKEN=$GITHUB_PUSH_TOKEN
         else
+            if [ -n "$GITHUB_TOKEN" ]; then
+                echo "No tokens set for pushing."
+                exit 1
+            fi
             PUSH_TOKEN=$GITHUB_TOKEN
         fi
         echo "Pushing to Github..."
