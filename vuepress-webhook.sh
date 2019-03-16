@@ -18,7 +18,7 @@ if [ -n "$GITHUB_REPO" ]; then
         if [ -n "$GITHUB_PUSH_TOKEN" ]; then
             PUSH_TOKEN=$GITHUB_PUSH_TOKEN
         else
-            if [ -n "$GITHUB_TOKEN" ]; then
+            if [ -z "$GITHUB_TOKEN" ]; then
                 echo "No tokens set for pushing."
                 exit 1
             fi
@@ -28,6 +28,8 @@ if [ -n "$GITHUB_REPO" ]; then
         cd .vuepress/dist
         git init
         git add -A
+        git config --global user.email "vuepress@autobuild.local"
+        git config --global user.name "Vuepress Autobuild"
         git commit -m 'Auto Deploy'
         git remote set-url origin https://$PUSH_TOKEN@$GITHUB_PUSH_REPO
         git push -f origin
