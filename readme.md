@@ -19,6 +19,10 @@ Webhook is supplied by [Hookdoo](https://github.com/adnanh/webhook)
 
 `GITHUB_TOKEN` - Needed to access private repos, otherwise will try to access a public repo.
 
+`GITHUB_PUSH_REPO` - URL of repo to push to once build finishes, e.g. `github.com/blastehh/mypage.git`
+
+`GITHUB_PUSH_TOKEN` - Set the token for pushing to Github if different from `GITHUB_TOKEN`
+
 ## Example docker command
 This will automatically regenerate the source files every 23 hours.
 ```
