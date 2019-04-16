@@ -42,7 +42,7 @@ docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepr
 ```
 
 ## Github with hooks example:
-This will listen for a webgook, and then pull from a private repo before generating the files.
+This will listen for a webhook, and then pull from a private repo before generating the files.
 Trigger the hook via `http://<container address>:9000/hooks/vuepress-webhook`
 ```
 docker run --name vuepress -v /host/vuepress/files/:/root/src/:rw -v /host/vuepress/output/:/root/html/:rw -d -p 9000:9000 -e USE_HOOK=1 -e GITHUB_REPO=github.com/blastehh/vuepress-docker.git -e GITHUB_TOKEN=TOKENHERE blasteh/vuepress
