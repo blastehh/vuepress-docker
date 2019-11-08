@@ -2,6 +2,7 @@
 set -eo pipefail
 
 if [ -n "$GITHUB_REPO" ]; then
+    mkdir -p /root/html
     cd /root/src
     if [ -n "$GITHUB_TOKEN" ]; then
         rm -rf ..?* .[!.]* *

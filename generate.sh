@@ -1,6 +1,7 @@
 #!/bin/ash
 set -euo pipefail
 
+mkdir -p /root/html
 cd /root/src
 rm -rf .vuepress/dist
 vuepress build
