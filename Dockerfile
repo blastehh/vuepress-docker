@@ -7,7 +7,7 @@ RUN chmod +x ./build.sh \
 
 FROM node:alpine
 
-RUN yarn global add vuepress \
+RUN yarn global add vuepress @vuepress/plugin-pwa \
     && mkdir -p /root/src /root/html \
     && apk add rsync curl git
 COPY --from=build /usr/local/bin/webhook /usr/local/bin/webhook
