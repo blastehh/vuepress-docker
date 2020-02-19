@@ -4,8 +4,8 @@ set -eo pipefail
 if [ -n "$GITHUB_REPO" ]; then
     mkdir -p /root/html
     cd /root/src
+    rm -rf .[!.]* *
     if [ -n "$GITHUB_TOKEN" ]; then
-        rm -rf ..?* .[!.]* *
         git clone https://$GITHUB_TOKEN@$GITHUB_REPO .; git pull
     else
         git clone https://$GITHUB_REPO .; git pull
