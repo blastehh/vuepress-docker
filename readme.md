@@ -23,6 +23,8 @@ Webhook is supplied by [Hookdoo](https://github.com/adnanh/webhook)
 
 `GITHUB_PUSH_TOKEN` - Set the token for pushing to Github if different from `GITHUB_TOKEN`
 
+`PLUGINS` - A space delimited list of vuepress plugins to install; e.g. `PLUGINS="@vuepress/plugin-back-to-top @vuepress/plugin-pwa"`
+
 ## Example docker command
 This will automatically regenerate the source files every 23 hours.
 ```
